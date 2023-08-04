@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(224, 130, 62);
+  background: radial-gradient(
+    circle,
+    rgba(224, 130, 62, 1) 0%,
+    rgba(240, 233, 82, 1) 49%,
+    rgba(255, 195, 135, 1) 100%
+  );
+}
+
+#center {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+section {
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  padding: 10% 0;
+}
+
+h1 {
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 40px;
+  color: white;
+  -webkit-text-stroke: 2px #ebd428;
+  margin-bottom: 10%;
+}
+
+.score {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+  color: #ff6b00;
+  margin-bottom: 20%;
+}
+
+.current {
+  width: 40%;
+  font-family: "Rubik", sans-serif;
+  color: #ebd428;
+  background-color: #fffdd6;
+  border-radius: 10px;
+  border: 4px solid #ebd428;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+section p {
+  font-size: 28px;
+  margin: 10px 0 10px;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #ff6b00;
+}
+.active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.passive {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.passive .current {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+i {
+  height: 100px;
+}
+
+.btns {
+  width: auto;
+  padding: 5px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebd428;
+  border-radius: 10px;
+  border: 2px solid #ff6b00;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  cursor: pointer;
+}
+
+#dice {
+  top: 65%;
+  user-select: none;
+}
+
+#hold {
+  top: 83%;
+}
+
+#again {
+  top: 8%;
+}
+
+img {
+  width: 40px;
+}
+
+span {
+  font-family: "Rubik Mono One", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+#again span {
+  font-size: 15px;
+}
+
+#output {
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes rollDice {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#output img.roll-animation {
+  animation: rollDice 1s ease-in-out;
+}
+
+#hint {
+  width: auto;
+  padding: 5px;
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fffdde;
+  text-align: center;
+  border-radius: 0 10px 0 10px;
+  border: 2px solid #ff6b00;
+}
+
+#hint p {
+  font-family: "Rubik", sans-serif;
+  color: #ff6b00;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.win {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  text-align: center;
+  background: rgb(255, 255, 207);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 207, 1) 0%,
+    rgba(255, 211, 76, 1) 100%
+  );
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.win img {
+  width: 300px;
+  margin: 0 350px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.close-win {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
